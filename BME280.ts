@@ -118,7 +118,7 @@ namespace IML_BME280 {
     /**
      * get pressure
      */
-    //% blockId="BME280_GET_PRESSURE" block="pressure %u"
+    //% blockId="BME280_GET_PRESSURE" block="気圧 %u"
     //% weight=80 blockGap=8
     export function pressure(u: BME280_P): number {
         get();
@@ -129,7 +129,7 @@ namespace IML_BME280 {
     /**
      * get temperature
      */
-    //% blockId="BME280_GET_TEMPERATURE" block="temperature %u"
+    //% blockId="BME280_GET_TEMPERATURE" block="温度 %u"
     //% weight=80 blockGap=8
     export function temperature(u: BME280_T): number {
         get();
@@ -140,7 +140,7 @@ namespace IML_BME280 {
     /**
      * get humidity
      */
-    //% blockId="BME280_GET_HUMIDITY" block="humidity"
+    //% blockId="BME280_GET_HUMIDITY" block="湿度"
     //% weight=80 blockGap=8
     export function humidity(): number {
         get();
@@ -170,113 +170,113 @@ namespace IML_BME280 {
      */
     //% block="Dewpoint"
     //% weight=60 blockGap=8
-    export function Dewpoint(): number {
-        get();
-        return T - Math.idiv(100 - H, 5)
-    }
+    //export function Dewpoint(): number {
+    //    get();
+    //    return T - Math.idiv(100 - H, 5)
+    //}
 
     /**
      * Pressure below Event
      */
     //% block="Pressure below than %dat" dat.defl=100000
-    export function PressureBelowThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (P < dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function PressureBelowThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //            if (P < dat) {
+    //                body()
+    //            }
+    //            basic.pause(1000)
+    //        }
+    //    })
+    //}
 
     /**
      * Pressure higher Event
      */
     //% block="Pressure higher than %dat" dat.defl=100000
-    export function PressureHigherThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (P > dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function PressureHigherThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //            if (P > dat) {
+    //                body()
+    //            }
+    //            basic.pause(1000)
+    //        }
+    //    })
+    //}
 
     /**
      * humidity below Event
      */
     //% block="Humidity below than %dat" dat.defl=10
-    export function HumidityBelowThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (H < dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function HumidityBelowThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //            if (H < dat) {
+    //                body()
+    //           }
+    //            basic.pause(1000)
+    //       }
+    //    })
+    //}
 
     /**
      * humidity higher Event
      */
     //% block="Humidity higher than %dat" dat.defl=50
-    export function HumidityHigherThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (H > dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function HumidityHigherThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //            if (H > dat) {
+    //                body()
+    //            }
+    //            basic.pause(1000)
+    //        }
+    //    })
+    //}
 
     /**
      * temperature below Event
      */
     //% block="Temperature below than %dat" dat.defl=10
-    export function TemperatureBelowThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (T < dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function TemperatureBelowThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //            if (T < dat) {
+    //                body()
+    //            }
+    //            basic.pause(1000)
+    //        }
+    //    })
+    //}
 
     /**
      * temperature higher Event
      */
     //% block="Temperature higher than %dat" dat.defl=30
-    export function TemperatureHigherThan(dat: number, body: () => void): void {
-        control.inBackground(function () {
-            while (true) {
-                get()
-                if (T > dat) {
-                    body()
-                }
-                basic.pause(1000)
-            }
-        })
-    }
+    //export function TemperatureHigherThan(dat: number, body: () => void): void {
+    //    control.inBackground(function () {
+    //        while (true) {
+    //            get()
+    //           if (T > dat) {
+    //                body()
+    //            }
+    //            basic.pause(1000)
+    //        }
+    //    })
+    //}
 
     /**
      * set I2C address
      */
     //% blockId="BME280_SET_ADDRESS" block="set address %addr"
     //% weight=20 blockGap=8
-    export function Address(addr: BME280_I2C_ADDRESS) {
-        BME280_I2C_ADDR = addr
-    }
+    //export function Address(addr: BME280_I2C_ADDRESS) {
+    //    BME280_I2C_ADDR = addr
+    //}
 }
